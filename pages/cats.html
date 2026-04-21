@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sida för att hitta katter" />
+    <title>Cats</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <p>BK CatStore</p>
+            <ul>
+                <li><strong><a href="cats.html">Cats</a></strong></li>
+                <li><a href="owner.html">Owner</a></li>
+                <li><a href="shoppingCart.html">Shopping cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Our cats</h1>
+
+        <div class="searchBar">
+            <input type="text" id="searchInput" placeholder="Search for cats...">
+            <img src="../icons/search.svg" id="searchBtn" alt="Search">
+        </div>
+
+
+        <div class="card">
+            <div id="catGrid" style="display:contents"></div>
+            <div class="pagination">
+                <button id="prevBtn" class="pageBtn">Previous page</button>
+                <button id="nextBtn" class="pageBtn">Next page</button>
+            </div>
+        </div>
+    </main>
+    <script src="cats.js"></script>
+</body>
+
+</html>
