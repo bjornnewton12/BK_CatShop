@@ -11,8 +11,12 @@ async function fetchCats() {
 function renderCats(cats = allCats) {
     const start = (currentPage - 1) * 10;
     const pageCats = cats.slice(start, start + 10);
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const cartIds = cart.map(c => c.imageId);
 
-    document.getElementById("catGrid").innerHTML = pageCats.map(cat => `
+    document.getElementById("catGrid").innerHTML = pageCats.map(cat => { 
+        const inCart = cartIds.includes(cat.reference_image_id);
+        return `
           <div class="catCard">
               <img class="catPhoto"
                 src="https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg"
@@ -20,24 +24,23 @@ function renderCats(cats = allCats) {
                 onerror="this.src='../images/Cat_Image_Default.jpg'">
               <div class="catCard-Title">
                   <h3>${cat.name}</h3>
-                  <img id="cart-${cat.reference_image_id}" src="../icons/shopping_cart.svg" alt="Add to shopping cart"
-                        onclick="addToCart('${cat.reference_image_id}', '${cat.name}', '${cat.origin}')">
               </div>
               <label>${cat.origin}</label>
+              <button class="addToCartBtn${inCart ? ' inCartBtn' : ''}"
+                id="btn-${cat.reference_image_id}"
+                data-id="${cat.reference_image_id}"
+                data-name="${cat.name}"
+                data-origin="${cat.origin}" 
+                onClick="toggleCart(this)">
+                ${inCart ? 'Remove from cart' : 'Add to cart'}
+               </button>
+
           </div>
-      `).join("");
+          `;
+    }).join("");
 
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const cartIds = cart.map(c => c.imageId);
-    cartIds.forEach(id => {
-        const icon = document.getElementById(`cart-${id}`);
-        if (icon) icon.src = "../icons/shopping_cart_active.svg";
-    });
-
-    document.getElementById("prevBtn").style.visibility = currentPage
-        === 1 ? "hidden" : "visible";
-    document.getElementById("nextBtn").style.visibility = currentPage
-        === 3 ? "hidden" : "visible";
+    document.getElementById("prevBtn").style.visibility = currentPage === 1 ? "hidden" : "visible";
+    document.getElementById("nextBtn").style.visibility = currentPage === 3 ? "hidden" : "visible";
 }
 
 document.getElementById("prevBtn").addEventListener("click", () => {
@@ -73,9 +76,21 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 fetchCats();
 
-function addToCart(imageId, name, origin) {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    cart.push({ imageId, name, origin });
+function toggleCart(btn) {
+    const imageId = btn.dataset.id;
+    const name = btn.dataset.name;
+    const origin = btn.dataset.origin;
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    if (cart.some(c => c.imageId === imageId)) {
+        cart = cart.filter(c => c.imageId !== imageId);
+        btn.textContent = 'Add to cart';
+        btn.classList.remove('inCartBtn');
+    }
+    else {
+        cart.push({ imageId, name, origin });
+        btn.textContent = 'Remove from cart';
+        btn.classList.add('inCartBtn');
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
-    document.getElementById(`cart-${imageId}`).src = "../icons/shopping_cart_active.svg";
 }

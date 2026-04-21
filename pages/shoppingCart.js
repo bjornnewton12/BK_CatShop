@@ -12,3 +12,19 @@ document.getElementById("cartGrid").innerHTML = cart.map(cat => `
           <label>${cat.origin}</label>
       </div>
   `).join("");
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("address").value;
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    let message = `Name: ${name}\nEmail: ${email}\nAddress ${address}\n\nOrdered cats:\n`;
+
+    cart.forEach(cat => {
+        message += `-${cat.name}\n`;
+    });
+
+    alert(message);
+});

@@ -97,17 +97,6 @@ nav a {
     border-radius: 16px;
 }
 
-.catCard-Title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.catCard-Title img {
-    width: 20px;
-    align-items: right;
-}
-
 .catPhoto {
     width: 100%;
     height: 140px;
@@ -135,11 +124,6 @@ nav a {
     justify-content: space-between;
 }
 
-.pageBtn {
-    color: black;
-    border: none;
-}
-
 /* SEARCH BAR */
 .searchBar {
     display: flex;
@@ -163,6 +147,45 @@ nav a {
 .searchBar img {
     width: 20px;
     cursor: pointer;
+}
+
+/* BUTTONS */
+.addToCartBtn {
+    background-color: aqua;
+    width: 100%;
+    height: 30px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 30px;
+    padding: 8px 16px;
+    object-fit: cover;
+    border: none;
+}
+
+.addToCartBtn:hover {
+    background-color: blue;
+}
+
+.inCartBtn {
+    background-color: red;
+    width: 100%;
+    height: 30px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 30px;
+    padding: 8px 16px;
+    object-fit: cover;
+    border: none;
+}
+
+.inCartBtn:hover {
+    background-color: darkred;
+}
+
+.pageBtn {
+    color: black;
+    background-color: none;
+    border: none;
 }
 
 /* RESPONSIVE */
