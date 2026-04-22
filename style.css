@@ -21,8 +21,9 @@ h1 {
 
 h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 h3 {
@@ -75,8 +76,8 @@ nav a {
     color: black;
 }
 
-/* CARDS */
-.card {
+/* CATS */
+.catGrid {
     background-color: #EC7176;
     box-sizing: border-box;
     padding: 16px;
@@ -84,12 +85,14 @@ nav a {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
+    margin-bottom: 50px;
 }
 
 .catCard {
     background-color: #F9D9CA;
     box-sizing: border-box;
     padding: 16px;
+    width: 200px;
     border-radius: 16px;
 }
 
@@ -111,6 +114,34 @@ nav a {
     margin-top: -15px;
     font-weight: 400;
 }
+
+/* SHOPPING CART */
+.cartGrid {
+    background-color: #EC7176;
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 16px;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.pageWrapper {
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.emptyCartMessage {
+      width: 100%;
+      text-align: center;
+      padding: 24px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bold;
+  }
 
 /* PAGINATION */
 .pagination {
@@ -141,7 +172,7 @@ nav a {
 }
 
 .searchBar input::placeholder {
-    color: black;
+    color: #F9D9CA;
 }
 
 .searchBar img {
@@ -164,13 +195,12 @@ nav a {
 
 .addToCartBtn:hover {
     background-color: #AA0D0E;
-    color: white;
+    color: #F9D9CA;
 }
 
 .inCartBtn {
     background-color: #AA0D0E;
-    color: white;
-    ;
+    color: #F9D9CA;
     width: 100%;
     height: 30px;
     object-fit: cover;
@@ -183,12 +213,79 @@ nav a {
 
 .inCartBtn:hover {
     background-color: #EC7176;
+    color: black;
 }
 
 .pageBtn {
     color: black;
     background-color: #EC7176;
     border: none;
+    font-weight: bold;
+}
+
+.submitBtn {
+    align-self: center;
+    background-color: #EC7176;
+    color: #F9D9CA;
+    border: none;
+    height: 30px;
+    border-radius: 30px;
+    padding: 8px 24px;
+}
+
+/* FORM */
+.formCard {
+    background-color: #EC7176;
+    box-sizing: border-box;
+    width: 664px;
+    padding: 16px;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.orderForm {
+    display: flex;
+    background-color: #F9D9CA;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.formRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.formRow label {
+    font-weight: 700;
+    width: 80px;
+}
+
+.orderFormBar {
+    flex: 1;
+    background-color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: none;
+}
+
+.orderFormBar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
+
+.orderFormBar input::placeholder {
+    color: black;
 }
 
 /* RESPONSIVE */

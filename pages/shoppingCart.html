@@ -21,18 +21,31 @@
 
 
     <main class="container">
-        <h1>Shopping cart</h1>
-        <div class="card">
-            <div id="cartGrid" style="display:contents"></div>
+        <div class="pageWrapper">
+            <h1>Shopping cart</h1>
+            <div class="cartGrid">
+                <div id="cartGrid" style="display:contents"></div>
+            </div>
+
+            <h2>Add order</h2>
+            <div class="formCard">
+                <form class="orderForm">
+                    <div class="formRow">
+                        <label>Name</label>
+                        <input class="orderFormBar" type="text" id="name" placeholder="Your name...">
+                    </div>
+                    <div class="formRow">
+                        <label>Email</label>
+                        <input class="orderFormBar" type="email" id="email" placeholder="Your email...">
+                    </div>
+                    <div class="formRow">
+                        <label>Address</label>
+                        <input class="orderFormBar" type="text" id="address" placeholder="The delivery address...">
+                    </div>
+                    <button class="submitBtn" type="submit">Send order</button>
+                </form>
+            </div>
         </div>
-
-        <form>
-            <input type="text" id="name" placeholder="Your name">
-            <input type="email" id="email" placeholder="Your email">
-            <input type="text" id="address" placeholder="Delivery address">
-            <button type="submit">Send order</button>
-        </form>
-
     </main>
 
 

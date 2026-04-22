@@ -10,10 +10,22 @@ document.getElementById("cartGrid").innerHTML = cart.map(cat => `
               <h3>${cat.name}</h3>
           </div>
           <label>${cat.origin}</label>
+          <button class="inCartBtn" onClick="removeFromCart('${cat.imageId}')">Remove from cart</button>
       </div>
   `).join("");
 
-document.querySelector("form").addEventListener("submit", function(e) {
+if (cart.length === 0) {
+    document.querySelector('.cartGrid').innerHTML = `<div class="catCard emptyCartMessage">There are currently no cats in your cart.</div>`;
+    document.querySelector('.cartGrid').style.gridTemplateColumns = '1fr';
+    document.querySelector('.cartGrid').style.minWidth = '500px';
+
+}
+
+const cols = Math.min(cart.length, 3);
+document.querySelector('.cartGrid').style.gridTemplateColumns =
+    `repeat(${cols}, auto)`;
+
+document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -28,3 +40,10 @@ document.querySelector("form").addEventListener("submit", function(e) {
 
     alert(message);
 });
+
+function removeFromCart(imageId) {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart = cart.filter(c => c.imageId !== imageId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+}
