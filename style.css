@@ -112,8 +112,11 @@ nav a {
     background-color: #F9D9CA;
     box-sizing: border-box;
     padding: 16px;
-    width: 200px;
     border-radius: 16px;
+}
+
+.cartGrid .catCard {
+    width: 200px;
 }
 
 .catPhoto {
@@ -309,20 +312,33 @@ nav a {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1100px) {
+    .catGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 @media (max-width: 900px) {
-    .card {
+    .catGrid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cartGrid {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .cartGrid .catCard {
+        width: 150px;
+    }
+
+    .formCard {
+        width: 100%;
     }
 }
 
 @media (max-width: 600px) {
     .hamburger {
         display: block;
-    }
-
-    .card {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     nav .container ul {
@@ -340,5 +356,17 @@ nav a {
 
     nav .container ul.open {
         display: flex;
+    }
+
+    .catGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cartGrid {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .cartGrid .catCard {
+        width: 100%;
     }
 }

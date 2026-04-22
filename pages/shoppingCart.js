@@ -10,7 +10,7 @@ document.getElementById("cartGrid").innerHTML = cart.map(cat => `
               <h3>${cat.name}</h3>
           </div>
           <label>${cat.origin}</label>
-          <button class="inCartBtn" onClick="removeFromCart('${cat.imageId}')">Remove from cart</button>
+          <button class="inCartBtn" onClick="removeFromCart('${cat.imageId}')">Remove</button>
       </div>
   `).join("");
 

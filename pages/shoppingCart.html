@@ -50,7 +50,11 @@
         </div>
     </main>
 
-
+    <script>
+        document.getElementById("hamburger").addEventListener("click", () => {
+            document.querySelector("nav ul").classList.toggle("open");
+        });
+    </script>
     <script src="shoppingCart.js"></script>
 
 </body>

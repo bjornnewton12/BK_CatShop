@@ -35,11 +35,17 @@
         <div class="catGrid">
             <div id="catGrid" style="display:contents"></div>
             <div class="pagination">
-                <button id="prevBtn" class="pageBtn">< Previous page</button>
-                <button id="nextBtn" class="pageBtn">Next page ></button>
+                <button id="prevBtn" class="pageBtn">
+                    < Previous page</button>
+                        <button id="nextBtn" class="pageBtn">Next page ></button>
             </div>
         </div>
     </main>
+    <script>
+        document.getElementById("hamburger").addEventListener("click", () => {
+            document.querySelector("nav ul").classList.toggle("open");
+        });
+    </script>
     <script src="cats.js"></script>
 </body>
 
