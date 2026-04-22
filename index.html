@@ -8,13 +8,32 @@
 
 <body>
     <nav>
-        <ul>
+        <div class="container">
             <p>BK CatStore</p>
-            <li><a href="pages/cats.html">Cats</a></li>
-            <li><a href="pages/owner.html">Owner</a></li>
-            <li><a href="pages/shoppingCart.html">Shopping cart</a></li>
-        </ul>
+            <ul>
+                <li><strong><a href="../index.html">Home</a></strong></li>
+                <li><a href="pages/cats.html">Cats</a></li>
+                <li><a href="pages/owner.html">Owner</a></li>
+                <li><a href="pages/shoppingCart.html">Shopping cart</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">&#9776;</button>
+        </div>
     </nav>
+
+    <header class="hero">
+        <img src="images/Header_Hero.png" alt="Peeking cat" class="heroImage">
+    </header>
+
+    <main class="container">
+        <h1>Welcome to BK CatStore</h1>
+        <h2>Welcome to BK CatStore, where we help cats find new homes.</h2>
+    </main>
+
+    <script>
+        document.getElementById("hamburger").addEventListener("click", () => {
+            document.querySelector("nav ul").classList.toggle("open");
+        });
+    </script>
 </body>
 
-</html>Ö
+</html>
