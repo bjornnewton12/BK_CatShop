@@ -1,0 +1,23 @@
+.aboutContainer {
+    padding: 30px;
+    align-self: center;
+    max-width: 650px;
+}
+
+.contactContainer {
+    background-color: #EC7176;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.contactField {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.contactField h3 {
+    text-align: center;
+}

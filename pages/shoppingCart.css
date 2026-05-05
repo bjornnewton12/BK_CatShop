@@ -1,0 +1,103 @@
+/* SHOPPING CART */
+.cartGrid {
+    background-color: #EC7176;
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 16px;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.cartGrid .catCard {
+    width: 200px;
+}
+
+.cartGrid .catCard.emptyCartMessage {
+    width: 100%;
+}
+
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emptyCartMessage {
+    width: 100%;
+    text-align: center;
+    padding: 24px;
+    font-weight: bold;
+}
+
+.formCard {
+    background-color: #EC7176;
+    box-sizing: border-box;
+    width: 664px;
+    padding: 16px;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.orderForm {
+    display: flex;
+    background-color: #F9D9CA;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.formRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.formRow label {
+    font-weight: 700;
+    width: 80px;
+}
+
+.orderFormBar {
+    flex: 1;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .cartGrid {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .cartGrid .catCard {
+        width: 150px;
+    }
+
+    .formCard {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .cartGrid {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .cartGrid .catCard {
+        width: 100%;
+    }
+}

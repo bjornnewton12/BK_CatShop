@@ -1,0 +1,89 @@
+/* CATS */
+.catGrid {
+    background-color: #EC7176;
+    box-sizing: border-box;
+    padding: 16px;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.catCard {
+    background-color: #F9D9CA;
+    box-sizing: border-box;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.catPhoto {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.catCard h3 {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.catCard label {
+    display: block;
+    margin-top: -15px;
+    font-weight: 400;
+}
+
+.pagination {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #EC7176;
+    border-radius: 24px;
+    padding: 8px 16px;
+    margin: 24px auto;
+    max-width: 600px;
+}
+
+.searchBar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    outline: none;
+}
+
+.searchBar input::placeholder {
+    color: #F9D9CA;
+}
+
+.searchBar img {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .catGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .catGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .catGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -17,13 +17,15 @@ document.getElementById("cartGrid").innerHTML = cart.map(cat => `
 if (cart.length === 0) {
     document.querySelector('.cartGrid').innerHTML = `<div class="catCard emptyCartMessage">There are currently no cats in your cart.</div>`;
     document.querySelector('.cartGrid').style.gridTemplateColumns = '1fr';
-    document.querySelector('.cartGrid').style.minWidth = '500px';
+    document.querySelector('.cartGrid').style.width = '100%';
+    document.querySelector('.cartGrid').style.maxWidth = '664px';
+    document.querySelector('.cartGrid').style.boxSizing = 'border-box';
 
+} else {
+    const cols = Math.min(cart.length, 3);
+    document.querySelector('.cartGrid').style.gridTemplateColumns =
+        `repeat(${cols}, auto)`;
 }
-
-const cols = Math.min(cart.length, 3);
-document.querySelector('.cartGrid').style.gridTemplateColumns =
-    `repeat(${cols}, auto)`;
 
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -43,6 +45,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
     });
 
     alert(message);
+    localStorage.setItem("cart", "[]");
+    location.reload();
 });
 
 function removeFromCart(imageId) {

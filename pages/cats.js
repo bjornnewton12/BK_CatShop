@@ -1,11 +1,12 @@
 let allCats = [];
 let currentPage = 1;
 
-async function fetchCats() {
+async function getCats() {
     const response = await fetch("https://api.thecatapi.com/v1/breeds?limit=30");
-    const breeds = await response.json();
-    allCats = breeds;
+    const data = await response.json();
+    allCats = data;
     renderCats();
+    console.log(data);
 }
 
 function renderCats(cats = allCats) {
@@ -74,7 +75,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     renderCats(filtered);
 });
 
-fetchCats();
+getCats();
 
 function toggleCart(btn) {
     const imageId = btn.dataset.id;
@@ -93,4 +94,22 @@ function toggleCart(btn) {
         btn.classList.add('inCartBtn');
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function handleAddCat() {
+    event.preventDefault()
+
+    const name = document.getElementById("animalName").value.trim();
+    const age = document.getElementById("animalAge").value.trim();
+
+    const newCatToAdd = {
+        name: name,
+        age: age
+    }
+
+    cats.push(newCatToAdd);
+    renderCat(cats);
+
+    document.getElementById("addCatForm").reset();
+
 }

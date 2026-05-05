@@ -3,25 +3,58 @@
 
 <head>
     <title>Owner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="owner.css">
 </head>
 
 <body>
     <nav>
         <div class="container">
-            <p>BK CatStore</p>
+            <p class="logo">BK Cat Store</p>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="cats.html">Cats</a></li>
-                <li><strong><a href="owner.html">Owner</a></strong></li>
+                <li><strong><a href="owner.html">About us</a></strong></li>
                 <li><a href="shoppingCart.html">Shopping cart</a></li>
             </ul>
             <button class="hamburger" id="hamburger">&#9776;</button>
         </div>
     </nav>
 
-    <h1>About me</h1>
-    <p>En sida med information om ägare med kontaktinformation. </p>
+    <header class="hero">
+        <img src="../images/Header_Hero.png" alt="Peeking cat" class="heroImage">
+    </header>
+
+    <div class="aboutContainer">
+        <h1>About us</h1>
+        <p>BK CatStore is the home of 30 cats, each with their own personality and story.
+            BK CatStore started with a simple idea: make it easy for people to find a cat that truly fits their life.
+            Whether you're a first-time owner or a lifelong cat person, we're here to help you find the right match.</p>
+            <p>Every one of our 30 cats is well-cared for, unique, and ready to find their forever home. We take the time
+            to get to know each of them so we can help you find the one that's right for you. </p>
+            <p>At BK CatStore, we're not just selling cats, we're making connections that last a lifetime.</p>
+    </div>
+
+    <div class="contactContainer">
+        <h1>Contact us</h1>
+        <div class="contactField">
+            <div>
+                <h3>Phone</h3>
+                <h3>+46739589657</h3>
+            </div>
+            <div>
+                <h3>Mail</h3>
+                <h3>BKCats@cat.com</h3>
+            </div>
+            <div>
+                <h3>Address</h3>
+                <h3>21 Cat Street</h3>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.getElementById("hamburger").addEventListener("click", () => {
