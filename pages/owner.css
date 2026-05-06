@@ -2,6 +2,7 @@
     padding: 30px;
     align-self: center;
     max-width: 650px;
+    margin: 0 auto;
 }
 
 .contactContainer {
@@ -16,6 +17,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .contactField h3 {
