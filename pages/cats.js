@@ -6,7 +6,6 @@ async function getCats() {
     const data = await response.json();
     allCats = data;
     renderCats();
-    console.log(data);
 }
 
 function renderCats(cats = allCats) {
@@ -26,7 +25,7 @@ function renderCats(cats = allCats) {
               <div class="catCard-Title">
                   <h3>${cat.name}</h3>
               </div>
-              <label>${cat.origin}</label>
+              <p class="catOrigin">${cat.origin}</p>
               <button class="addToCartBtn${inCart ? ' inCartBtn' : ''}"
                 id="btn-${cat.reference_image_id}"
                 data-id="${cat.reference_image_id}"
@@ -94,22 +93,4 @@ function toggleCart(btn) {
         btn.classList.add('inCartBtn');
     }
     localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function handleAddCat() {
-    event.preventDefault()
-
-    const name = document.getElementById("animalName").value.trim();
-    const age = document.getElementById("animalAge").value.trim();
-
-    const newCatToAdd = {
-        name: name,
-        age: age
-    }
-
-    cats.push(newCatToAdd);
-    renderCat(cats);
-
-    document.getElementById("addCatForm").reset();
-
 }

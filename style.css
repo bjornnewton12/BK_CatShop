@@ -48,7 +48,6 @@ nav {
     top: 0;
     background-color: #EC7176;
     height: 3rem;
-    align-items: center;
     z-index: 100;
 }
 
@@ -63,7 +62,6 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top: -20px;
 }
 
 nav a {
@@ -71,14 +69,6 @@ nav a {
     text-decoration: none;
     padding: 10px;
     color: black; 
-}
-
-nav img {
-    width: 25%;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .logo {
@@ -93,7 +83,6 @@ nav img {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    margin-top: -20px;
 }
 
 /* HERO */
@@ -111,8 +100,10 @@ nav img {
 /* BUTTONS */
 .addToCartBtn {
     background-color: #EC7176;
+    font-size: 0.9rem;
+    font-weight: 600;
     width: 100%;
-    height: 30px;
+    height: 40px;
     margin-top: 10px;
     border-radius: 30px;
     padding: 8px 16px;
@@ -126,9 +117,11 @@ nav img {
 
 .inCartBtn {
     background-color: #AA0D0E;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: #F9D9CA;
     width: 100%;
-    height: 30px;
+    height: 40px;
     margin-top: 10px;
     border-radius: 30px;
     padding: 8px 16px;
@@ -143,6 +136,7 @@ nav img {
 .pageBtn {
     color: black;
     background-color: #EC7176;
+    font-weight: 600;
     border: none;
     font-weight: bold;
 }
@@ -150,9 +144,11 @@ nav img {
 .submitBtn {
     align-self: center;
     background-color: #EC7176;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: black;
     border: none;
-    height: 30px;
+    height: 40px;
     border-radius: 30px;
     padding: 8px 24px;
 }
@@ -160,6 +156,7 @@ nav img {
 .submitBtn:hover {
     background-color: #AA0D0E;
     color: white;
+    cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -174,6 +171,8 @@ nav img {
         top: 3rem;
         left: 0;
         width: 100%;
+        margin-top: 0px;
+        gap: 1rem;
         background-color: #EC7176;
         padding: 16px;
         box-sizing: border-box;
